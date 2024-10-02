@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="es"> 
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <title>Proyecto Final</title>
+    <style>
+        body {
+            background-image: url("https://i.ibb.co/qkK5Wf6/a5d3f48c-6e41-4ba1-b949-542e62e9d911.jpg");
+            margin: 0;
+            padding: 0;
+        }
+        h1 {
+            color: rgb(243, 126, 126);
+            padding: 20px;
+            font-size: 80px;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            text-align: center;
+            transition: transform 0.5s ease-in-out, color 0.5s ease-in-out;
+            animation: colorChange 2s infinite alternate;
+        }
+        @keyframes colorChange {
+            0% { color: #f89d9f; }
+            100% { color: #949193; }
+        }
+        h1:hover {
+            color: #f94b6e;
+            transform: scale(1.3); 
+        }
+        h2 {
+            padding: 15px;
+            color: rgb(246, 241, 241);
+            font-size: 40px;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            text-align: center;
+        }
+        h3{
+            color: #949193;
+            font-size: 30px;
+        }
+        p {
+            color: #f5f0f0;
+            text-align: center;
+            font-size: 30px;
+        }
+        header {
+            background-color: rgb(250, 209, 225);
+            padding: 20px;
+            width: 100%;
+            text-align: center;
+        }
+        nav {
+            padding: 12px;
+            height: auto;
+            display: flex;
+            justify-content: space-between;            
+            margin: 0;
+            font-family: inherit;
+        }
+        nav a {
+            text-decoration: none;
+            background-color: rgb(250, 209, 225);
+            color: rgb(93, 88, 88);
+            border-radius: 10px;
+            align-items: center;
+            padding: 15px;
+            margin: 15px;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+        }
+        nav li {
+            list-style: none;
+            margin-left: 0px;
+        }
+        nav a:hover {
+            background-color: rgb(249, 176, 215);
+            color: rgb(251, 104, 124);
+            padding: 10px;
+        }
+        .carrusel {
+            overflow: hidden;
+            position: relative;
+            width: 100%;
+            height: 300px;
+        }
+        .imagenes {
+            display: flex;
+            width: 600%;
+            height: 100%;            
+            animation: slide 20s infinite;
+        }
+        .imagenes img {
+            width: 100%;
+            height: auto;
+        }
+      
+        @keyframes slide {
+            0% { margin-left: 0; }
+            5% { margin-left: 0; }
+            25% { margin-left: -100%; }
+            35% { margin-left: -100%; }
+            40% { margin-left: -200%; }
+            55% { margin-left: -200%; }
+            60% { margin-left: -300%; }
+            75% { margin-left: -300%; }
+            78% { margin-left: -400%; }
+            85% { margin-left: -400%; }
+            87% { margin-left: -500%; }
+            95% { margin-left: -500%; }
+            100% { margin-left: 0; }
+        }
+        .menu {
+            bottom: 20px;
+            right: 20px;
+            background-color: #716f6f;
+            color: white;
+            padding: 10px 15px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: transform 0.3s;
+            position: absolute;
+        }
+        .menu:hover {
+            background-color: #f691bd;
+            color: rgb(255, 249, 251);
+            transform: scale(1.1);
+        }
+        #inicio, #guia, #donacion, #adopcion, #voluntariado {
+            background-color: #fb8b9c;
+            height: 900px;
+            position: relative;
+        }
+        #voluntariado { height: 1000px; }
+        .seccion {
+            display: flex;
+            justify-content: space-around; 
+            align-items: center; 
+            padding: 20px;
+            height: 600px; 
+            background: linear-gradient(rgb(246, 195, 195), rgb(252, 172, 220));
+            width: 80%;
+            border-radius: 10px;
+            margin: auto;
+        }
+        .calculadora {
+            height: 700px;             
+            width: 40%;
+            overflow: hidden;             
+            position: relative;  
+            background-size: center;   
+            background-position: center; 
+        }
+        .secction-vol {
+            display: flex;
+            justify-content: space-around; 
+            align-items: center; 
+            padding: 20px;
+            height: 700px; 
+            background: linear-gradient(rgb(246, 195, 195), rgb(252, 172, 220));
+            width: 80%;
+            border-radius: 10px;
+            margin: auto;
+        }
+        .parrafo, .video-container, .Sheets {
+            width: 40%;
+            height: 260px; 
+            background-color: rgb(253, 138, 180);
+            border-radius: 10px;
+            text-align: center;
+            padding: 20px;
+            justify-content: center;
+        }
+        .formulario{
+            width: 40%;
+            height: 350px; 
+            background-color: rgb(253, 138, 180);
+            border-radius: 10px;
+            text-align: center;
+            padding: 20px;
+            justify-content: center;
+        }
+        .video-container, .calculadora, .Sheets {
+            overflow: hidden;             
+            position: relative;  
+            background-size: center;   
+            background-position: center; 
+        }
+        .Sheets{
+            overflow: hidden;             
+            position: relative;  
+            background-size: center;   
+            background-position: center; 
+            margin: 45%;
+            height: 350px;
+
+        }
+        .video {
+            width: 100%;                  
+            height: 100%;                 
+            border: none;                 
+            position: absolute;           
+            top: 50%;                     
+            left: 50%;                    
+            transform: translate(-50%, -50%); 
+        }
+        footer {
+            background-color: rgb(114, 110, 110);
+            color: azure;
+            padding: 15px;
+            width: 100%;
+            text-align: center;
+        }
+        footer a {
+            list-style-type: none;
+            text-decoration: none;
+            color: rgb(247, 124, 185);
+            padding: 14px;
+            font-size: 20px;
+        }
+        footer a:hover {
+            color: antiquewhite;
+            text-decoration: underline;
+        }
+        .social-icons {
+            list-style: none;
+            padding: 0;
+        }
+        .social-icons li {
+            display: inline;
+            margin: 0 15px;
+        }
+        .social-icons a {
+            color: rgb(250, 230, 230);
+            text-decoration: none;
+            font-size: 24px;
+        }
+        .social-icons a:hover {
+            color: #fb8b9c;
+            transform: scale(1.3); 
+        }
+        /* Estilos para los enlaces como botones */
+        .styled-link {
+            display: inline-block;
+            background-color: #fb8b9c;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-size: 18px;
+            transition: background-color 0.3s, transform 0.3s;
+            margin-top: 10px;
+        }
+        .styled-link:hover {
+            background-color: #f691bd;
+            transform: scale(1.05);
+        }
+        .download-button {
+            display: inline-block;
+            background-color: #fb8b9c;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-size: 18px;
+            transition: background-color 0.3s, transform 0.3s;
+            margin-top: 10px;
+            text-align: center;
+        }
+        .download-button:hover {
+            background-color: #f691bd;
+            transform: scale(1.05);
+        }
+        
+    </style>
+</head>
+<body>
+    <header id="menu">
+        <nav class="inicio" style="display: flex; align-items: center; justify-content: space-between;">
+            <ul style="flex-grow: 1; display: flex; justify-content: flex-start; padding: 0; margin: 0;">
+                <li>
+                    <a href="#inicio">INICIO</a>
+                    <a href="#guia">GUÍA INFORMATIVA</a>
+                    <a href="#adopcion">ADOPCIÓN</a>
+                    <a href="#voluntariado">VOLUNTARIADO</a>
+                    <a href="#donacion">DONACIONES</a>
+                </li>
+            </ul>
+            <div style="display: flex; justify-content: flex-end; align-items: center;">
+                <a href="">TIK TOK</a>
+                <a href="">YOUTUBE</a>
+                <a href="">INSTAGRAM</a>
+            </div>
+        </nav>
+    </header>
+    <div class="carrusel">
+        <div class="imagenes">
+            <img src="https://i.ibb.co/RDHbBbN/df9a4aa3-0ebd-4039-9395-2719bef7073d.jpg" alt="imagen1">
+            <img src="https://i.ibb.co/ZGFf2F0/87f6f200-a706-4f98-89b3-41e73ce06d6c.jpg" alt="imagen2">
+            <img src="https://i.ibb.co/6FGt8Vr/7739c3fc-3eea-4d20-955f-8c3a80910949.jpg" alt="imagen3">
+            <img src="https://i.ibb.co/THnX10S/b9518f18-a97d-4c8b-855e-fa664efec7ad.jpg" alt="imagen4">
+            <img src="https://i.ibb.co/ZGFf2F0/87f6f200-a706-4f98-89b3-41e73ce06d6c.jpg" alt="imagen5">
+        </div>
+    </div>
+    <h1>FUNDACIÓN HUELLITAS</h1>
+
+    <section id="inicio">
+        <h2>INICIO</h2>
+        <p>Bienvenidos a la Fundación Huellitas, donde cada día trabajamos con dedicación para mejorar la vida de los animales necesitados. Nuestro compromiso es brindarles un hogar seguro y amoroso, así como atención médica adecuada.</p>
+        <div class="seccion">
+            <div class="parrafo">
+                <p>Creemos un mundo donde todos los seres vivos tengan la oportunidad de vivir en condiciones dignas y saludables. A través de programas de adopción y concienciación para hacer la diferencia en la vida de aquellos que no tienen voz.</p>
+            </div>
+            <div class="video-container">
+                <iframe class="video" src="https://www.youtube.com/embed/UHrZOutmRu4?autoplay=1" allowfullscreen></iframe>
+            </div>
+        </div>
+        <a class="menu" href="#menu">MENÚ</a>
+    </section>
+
+    <section id="guia">
+        <h2>GUÍA INFORMATIVA</h2>
+        <p>En esta sección, proporcionamos información esencial sobre nuestra fundación, incluyendo nuestra misión, visión y los servicios que ofrecemos. Creemos en la transparencia y queremos que nuestros seguidores conozcan cada aspecto de nuestro trabajo.</p>
+
+        <div class="seccion">
+            <div class="video-container">
+                <iframe class="video" src="https://es.wikipedia.org/w/index.php?search=concientizacion+animal&title=Especial%3ABuscar&ns0=1&ns100=1&ns104=1&searchToken=v0spibt3rhs4n73n9k4oyot7"></iframe>
+            </div>
+            <div class="parrafo">
+                <p>Fundación huellitas es una organización sin fines de lucro dedicada a apoyar a diversas asociaciones mediante la difusión de sus causas a través de redes sociales y la gestión de donaciones. Nuestro objetivo es ayudar a los que no pueden defenderse.</p>
+            </div>
+        </div>
+        <a class="menu" href="#menu">MENÚ</a>
+    </section>
+
+    <section id="voluntariado">
+        <h2>VOLUNTARIADO</h2>
+        <p>El voluntariado es una parte fundamental de nuestra operación. Buscamos personas apasionadas que deseen hacer una diferencia en la vida de los animales. Si tienes tiempo y amor para dar, ¡te necesitamos!</p>
+
+        <div class="secction-vol">
+            <div class="calculadora">
+                <iframe class="video" src="https://tierrita123.github.io/calculadora/calculadora%20(1).html"></iframe> 
+                <a class="styled-link" href="https://tierrita123.github.io/calculadora/calculadora%20(1).html" download="mi-archivo.pdf">Descargar Calculadora</a>
+                <a class="download-button" href="https://tierrita123.github.io/calculadora/calculadora%20(1).html" download="mi-archivo.pdf">Descargar</a>
+            </div>
+            <div class="parrafo">
+                <p>Creemos que cada acción cuenta y que, juntos, podemos marcar la diferencia. Nuestro programa de voluntariado ofrece la oportunidad de involucrarte activamente en causas que importan, apoyando a diversas asociaciones que necesitan tu ayuda.</p>
+            </div>
+        </div>
+        <a class="menu" href="#menu">MENÚ</a>
+    </section>
+
+    <section id="donacion">
+        <h2>DONACIONES</h2>
+        <p>Tu apoyo es crucial para nuestra labor. Las donaciones nos permiten proporcionar alimentos, atención médica y refugio a los animales que rescatamos. Cada contribución, grande o pequeña, marca una diferencia significativa.</p>
+        <div class="seccion">
+            <div class="formulario">
+                <iframe class="sheets" src="https://docs.google.com/spreadsheets/d/1UOVMqra63Di03xaw2GAi5VYMLVjWVMiQ7oCV-TTr3nI/edit?usp=sharing"></iframe>
+            </div>
+            <div class="parrafo">
+                <p>Tu donación ayuda a cubrir los gastos de alimentación, atención veterinaria y refugio seguro para nuestros animales.</p>
+            </div>
+        </div>
+        <a class="menu" href="#menu">MENÚ</a>
+    </section>
+
+    <section id="adopcion">
+        <h2>PLATAFORMA DE ADOPCIÓN</h2>
+        <p>Nuestra plataforma de adopción está diseñada para conectar a los animales rescatados con familias amorosas. Cada uno de nuestros animales tiene una historia única y estamos aquí para ayudarles a encontrar su hogar ideal.</p>
+        
+        <div class="seccion">
+            <div class="button">
+                <h3>ADOPTEMOS A UN PELUDITO</h3>
+                <p>Por favor, necesitamos tu ayuda:</p>
+                <a class="styled-link" href="https://tierrita123.github.io/AdopcionResponsable/borrindsin.html">Únete a la causa</a>
+            </div>
+    
+            <div class="parrafo">
+                <p>Al adoptar, no solo salvas una vida, sino que también haces espacio para que más animales puedan ser rescatados.</p>
+            </div>
+        </div>
+        
+        <a class="menu" href="#menu">MENÚ</a>
+    </section>
+
+    <footer>
+        <h3>Síguenos en nuestras redes sociales:</h3>
+        <ul class="social-icons">
+            <li><a href="https://www.facebook.com/FundacionHuellitas01?mibextid=rS40aB7S9Ucbxw6v" target="_blank"><i class="fab fa-facebook-f"></i></a></li>
+            <li><a href="https://x.com/FPerrunas" target="_blank"><i class="fab fa-twitter"></i></a></li>
+            <li><a href="https://youtube.com/@asociacionhuellitasbolivia3714?si=qNRhiTPzJff-QxMA" target="_blank"><i class="fab fa-youtube"></i></a></li>
+            <li><a href="https://www.instagram.com/refugioladridos/?hl=es-la" target="_blank"><i class="fab fa-instagram"></i></a></li>
+            <li><a href="https://www.tiktok.com/@huellitasbolivia?_t=8qBkPsCEeda&_r=1" target="_blank"><i class="fab fa-tiktok"></i></a></li>
+        </ul>
+        <h3>&copy; 2024 Mishel Melisa Salas Chura. Todos los derechos reservados.</h3>
+    </footer>
+</body>
+</html>
